@@ -4,15 +4,302 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.view.LoginActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_top"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/cream"
+        android:minHeight="?android:attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/login"
+            android:textColor="@color/darkBrown"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/space_60"
+        android:layout_height="@dimen/space_60"
+        android:layout_marginTop="@dimen/space_100"
+        android:src="@drawable/ic_lotus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_masuk_accoun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="185dp"
+        android:fontFamily="@font/nunito_semi_bold"
+        android:text="@string/masuk_ke_akun"
+        android:textColor="@color/textBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="206dp"
+        android:fontFamily="@font/nunito"
+        android:text="@string/info_login"
+        android:textColor="@color/textBlack"
+        android:textSize="9sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
+    <View
+        android:id="@+id/constrain"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="274dp"
+        android:layout_marginBottom="@dimen/space_20"
+        android:alpha="0.1"
+        android:background="@drawable/bg_rounded_card_shadow"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="@dimen/space_20"
+        app:cardCornerRadius="@dimen/space_16"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="278dp"
+        android:background="@drawable/bg_rounded_card_view"
+        app:cardCornerRadius="@dimen/space_16"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/appCompatImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_36"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_20"
+            android:background="@drawable/item_google"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_1"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_28"
+            android:background="#C4C4C4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatImageButton" />
+
+        <View
+            android:layout_width="@dimen/space_40"
+            android:layout_height="@dimen/space_40"
+            android:background="@color/md_white_1000"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atau"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/appCompatImageButton"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatImageButton"
+            app:layout_constraintStart_toStartOf="@+id/appCompatImageButton"
+            app:layout_constraintTop_toTopOf="@+id/appCompatImageButton">
+
+
+            <ImageView
+                android:layout_width="@dimen/space_16"
+                android:layout_height="@dimen/space_16"
+                android:layout_marginHorizontal="@dimen/space_8"
+                android:src="@drawable/img_google" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_8"
+                android:fontFamily="@font/nunito"
+                android:includeFontPadding="false"
+                android:text="@string/masuk_dengan_akun_google"
+                android:textAllCaps="false"
+                android:textColor="@color/textBlack"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginTop="140dp"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/email"
+            android:textColor="@color/textBlack"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SmallSp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/space_8"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/item_rounded_edt"
+            android:hint="@string/alamat_email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="@dimen/space_16"
+            android:textColorHint="@color/textGrey"
+            android:textColor="@color/textBlack"
+            android:textSize="9sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="SmallSp" />
+
+
+        <TextView
+            android:id="@+id/tv_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_12"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/password"
+            android:textColor="@color/textBlack"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText"
+            tools:ignore="SmallSp" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_8"
+            android:background="@drawable/item_rounded_edt"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="@dimen/space_16"
+            android:textColor="@color/textBlack"
+            android:textColorHint="@color/textGrey"
+            android:textSize="9sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_password"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="@dimen/space_16"
+            android:src="@drawable/img_eye"
+            app:layout_constraintBottom_toBottomOf="@+id/edt_email"
+            app:layout_constraintEnd_toEndOf="@+id/edt_email"
+            app:layout_constraintTop_toTopOf="@+id/edt_email" />
+
+        <TextView
+            android:id="@+id/tv_lupa_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_12"
+            android:fontFamily="@font/nunito_semi_bold"
+            android:text="@string/lupa_password"
+            android:textColor="@color/darkBrown"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email"
+            tools:ignore="SmallSp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_36"
+            android:layout_marginHorizontal="@dimen/space_16"
+            android:layout_marginTop="@dimen/space_8"
+            android:background="@drawable/item_brown_rounded"
+            android:text="@string/login"
+            android:textColor="@color/md_white_1000"
+            android:textAllCaps="false"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_lupa_password"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/space_56"
+        android:background="@color/cream"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constrain_login">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito"
+            android:text="@string/belum_memiliki_akun"
+            android:textColor="@color/textBlack"
+            android:textSize="11sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_8"
+            android:fontFamily="@font/nunito"
+            android:text="@string/daftar"
+            android:textColor="@color/darkBrown"
+            android:textSize="11sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
