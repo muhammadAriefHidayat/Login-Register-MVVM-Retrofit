@@ -1,11 +1,19 @@
 package com.apps.loginregisterretrofit.ui.view
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import com.apps.loginregisterretrofit.databinding.ActivityLoginBinding
+import com.apps.loginregisterretrofit.model.LoginBody
+import com.apps.loginregisterretrofit.ui.viewmodel.LoginViewModel
+import com.apps.loginregisterretrofit.ui.viewmodel.ViewModelFactory
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
+    private val loginViewModel : LoginViewModel by viewModels {
+        ViewModelFactory.getInstance(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,35 +33,11 @@ class LoginActivity : AppCompatActivity() {
                     binding.edtEmail.error = "Masukkan Password"
                 }
                 else -> {
-//                    logoin(email, password)
+                    val loginBody = LoginBody(email,password)
+                    loginViewModel.Login(loginBody)
                 }
             }
         }
 
     }
-
-//    fun logoin(email: String, passord: String) {
-//        Log.d("hasil", email)
-//        val loginBody = LoginBody(email, passord)
-//        Log.d("hasil", loginBody.toString())
-//
-//        val apiService = ApiClient.getClient.login2(loginBody)
-//
-//        apiService.enqueue(object : Callback<LoginResponse> {
-//            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-//                Log.d("hasil", "res")
-//                Log.d("hasil", "res :${response.toString()}")
-//                val listUser = response.body()?.data
-//                Log.d("hasil", "token :${listUser?.token.toString()}")
-//                Log.d("hasil", "res2 :${response.body().toString()}")
-//            }
-//
-//            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-//                Log.d("hasil", "error")
-//            }
-//        })
-//
-//
-////        Log.d("ceking", client.data.token.toString())
-//    }
 }
