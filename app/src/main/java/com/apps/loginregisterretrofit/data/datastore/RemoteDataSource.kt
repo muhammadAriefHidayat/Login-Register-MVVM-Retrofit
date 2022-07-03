@@ -12,7 +12,7 @@ class RemoteDataSource(private val apiServices: ApiServices) {
     fun register(loginBody: LoginBody) = flow {
         emit(apiServices.login2(loginBody))
     }.catch {
-        Log.d("register", "register: failed = ${it.message}")
+        Log.d("login", "login: failed = ${it.message}")
     }.flowOn(Dispatchers.IO)
 
 }
